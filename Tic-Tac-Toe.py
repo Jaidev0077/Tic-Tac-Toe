@@ -71,6 +71,12 @@ def getPlayerMove(board):
         move = input()
     return int(move)
 
+def getPlayer2Move(board):
+    move = ' '
+    while move not in '1 2 3 4 5 6 7 8 9'.split() or not isSpaceFree(board, int(move)):
+        print('What is player2\'s next move? (1-9)')
+        move = input()
+    return int(move)
 
 def chooseMove(board, movesList):
     possibleMoves = []
