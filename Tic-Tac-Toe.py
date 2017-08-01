@@ -11,19 +11,23 @@ def displayBoard(board):
     print(' ---------')
     print(' ' + board[1] + ' | ' + board[2] + ' | ' + board[3])
 
+letterOptions=['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+
+
 
 def inputPlayerLetter():
     letter = ''
-    while not (letter == 'X' or letter == 'O'):
-        print('Does player1 want to be X or O?')
+    while not (letter in letterOptions):
+        print('Player 1 must select a letter')
         letter = input().upper()
 
-    if letter == 'X':
-        return ['X', 'O']
+    if letter not in 'A':
+        return [letter, 'A']
     else:
-        return ['O', 'X']
+        print('Please choose a different letter other than ' + letter)
+    
 
-
+print('Player 2\'s letter is always \"A\"')
 def whoGoesFirst():
     if random.randint(0, 1) == 0:
         return 'player1'
@@ -144,4 +148,3 @@ while True:
 
     if not playAgain():
         break
-
