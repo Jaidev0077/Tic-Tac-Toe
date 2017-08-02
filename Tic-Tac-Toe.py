@@ -1,5 +1,5 @@
 # This program allows users to play Tic-tac-toe
-# against the computer
+# against another player
 from termcolor import colored, cprint
 import random
 
