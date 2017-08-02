@@ -12,30 +12,19 @@ def displayBoard(board):
 
 
 def inputPlayerLetter():
-    letterOptions=('A B C D E F G H I J K L M N O P Q R S T U V W X Y Z').split()
-    
-    print('Player 1, type in your character')
-    X=input().upper
-    print('Player 2, type in your character')
-    O=input().upper
-    if not (X in letterOptions):
-      print('Player 1, please type a valid character')
-      X=input().upper()
-    elif not(O in letterOptions):
-      print('Player 2, please type in a valid character')
-      O=input().upper()
-    else:
-      print('Thank you')
-    letter=''
-    while not (letter == X or letter == O):
-      print('Player 1, please confirm your character')
-      letter = input().upper()
-
-    if letter == X:
-        return [X, O]
-    else:
-        return [O, X]
-
+    letterOptions = 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z'.split()
+    letter = ''
+    character = ''
+    done = False
+    while letter not in letterOptions:
+        print('Player 1, type in your character')
+        letter = input()
+        done = True
+    while character not in letterOptions:
+        print('Player 2, type in your character')
+        character = input()
+        done = False
+    return letter, character
 
 def whoGoesFirst():
     if random.randint(0, 1) == 0:
