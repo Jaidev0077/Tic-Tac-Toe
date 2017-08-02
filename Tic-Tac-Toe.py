@@ -1,29 +1,29 @@
 # This program allows users to play Tic-tac-toe
 # against the computer
-
+from termcolor import colored, cprint
 import random
 
 def displayBoard(board):
-    print(' ' + board[7] + ' | ' + board[8] + ' | ' + board[9])
+    x = colored(' ' + board[7] + ' | ' + board[8] + ' | ' + board[9], 'red')
+    print(x)
     print(' ---------')
-    print(' ' + board[4] + ' | ' + board[5] + ' | ' + board[6])
+    y = colored(' ' + board[4] + ' | ' + board[5] + ' | ' + board[6], 'blue')
+    print(y)
     print(' ---------')
-    print(' ' + board[1] + ' | ' + board[2] + ' | ' + board[3])
+    z = colored(' ' + board[1] + ' | ' + board[2] + ' | ' + board[3], 'yellow')
+    print(z)
 
 
 def inputPlayerLetter():
     letterOptions = 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z'.split()
     letter = ''
     character = ''
-    done = False
     while letter not in letterOptions:
         print('Player 1, type in your character')
         letter = input()
-        done = True
     while character not in letterOptions:
         print('Player 2, type in your character')
         character = input()
-        done = False
     return letter, character
 
 def whoGoesFirst():
