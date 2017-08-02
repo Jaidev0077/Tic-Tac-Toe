@@ -19,10 +19,10 @@ def inputPlayerLetter():
     letter = ''
     character = ''
     while letter not in letterOptions:
-        print('Player 1, type in your character')
+        print('Player 1, type in your character(A-Z)')
         letter = input()
     while character not in letterOptions:
-        print('Player 2, type in your character')
+        print('Player 2, type in your character(A-Z)')
         character = input()
     return letter, character
 
