@@ -3,7 +3,6 @@
 
 import random
 
-
 def displayBoard(board):
     print(' ' + board[7] + ' | ' + board[8] + ' | ' + board[9])
     print(' ---------')
@@ -13,14 +12,24 @@ def displayBoard(board):
 
 
 def inputPlayerLetter():
+    letterOptions=('A B C D E F G H I J K L M N O P Q R S T U V W X Y Z').split()
+    
     print('Player 1, type in your character')
-    X=input()
+    X=input().upper
     print('Player 2, type in your character')
-    O=input()
-    letter = ''
+    O=input().upper
+    if not (X in letterOptions):
+      print('Player 1, please type a valid character')
+      X=input().upper()
+    elif not(O in letterOptions):
+      print('Player 2, please type in a valid character')
+      O=input().upper()
+    else:
+      print('Thank you')
+    letter=''
     while not (letter == X or letter == O):
-        print('Player 1, please type in your character again')
-        letter = input().upper()
+      print('Player 1, please confirm your character')
+      letter = input().upper()
 
     if letter == X:
         return [X, O]
